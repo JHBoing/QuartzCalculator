@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+
+
 export default class App extends React.Component {
 
     constructor(props) {
@@ -34,73 +36,109 @@ export default class App extends React.Component {
                     <TouchableOpacity
                         title="-"
                         onPress={(quartzo) => (this.state.quartzo > 0) ? this.setState({quartzo: this.state.quartzo - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Quartzo</Text>
                     <Text> {this.state.quartzo}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(quartzo) => this.setState({quartzo: this.state.quartzo + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
                         onPress={(quartzoRosa) => (this.state.quartzoRosa > 0) ? this.setState({quartzoRosa: this.state.quartzoRosa - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Quartzo Rosa</Text>
                     <Text> {this.state.quartzoRosa}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(quartzoRosa) => this.setState({quartzoRosa: this.state.quartzoRosa + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
                         onPress={(rubelita) => (this.state.rubelita > 0) ? this.setState({rubelita: this.state.rubelita - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Rubelita</Text>
                     <Text> {this.state.rubelita}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(rubelita) => this.setState({rubelita: this.state.rubelita + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
                         onPress={(esmeralda) => (this.state.esmeralda > 0) ? this.setState({esmeralda: this.state.esmeralda - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Esmeralda</Text>
                     <Text> {this.state.esmeralda}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(esmeralda) => this.setState({esmeralda: this.state.esmeralda + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>    
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
                         onPress={(safira) => (this.state.safira > 0) ? this.setState({safira: this.state.safira - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Safira</Text>
                     <Text> {this.state.safira}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(safira) => this.setState({safira: this.state.safira + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
                         onPress={(rubi) => (this.state.rubi > 0) ? this.setState({rubi: this.state.rubi - 1}):null}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>-</Text>
+                    </TouchableOpacity>
                     <Text>Rubi</Text>
                     <Text> {this.state.rubi}</Text>
                     <TouchableOpacity
                         title="+"
                         onPress={(rubi) => this.setState({rubi: this.state.rubi + 1})}
-                    />
+                        style={styles.button}
+                    >
+                        <Text>+</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity

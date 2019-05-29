@@ -12,13 +12,34 @@ class Calculator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            quartzo: 0,
-            quartzoRosa: 0,
-            rubelita: 0,
-            esmeralda: 0,
-            safira: 0,
-            rubi: 0,
-            ambar: 0,
+            quartzo: {
+                valor: 1,
+                contador: 0
+            },
+            quartzoRosa:{
+                valor: 0,
+                contador: 0
+            },
+            rubelita:{
+                valor: 2,
+                contador: 0
+            },
+            esmeralda: {
+                valor: 3,
+                contador: 0
+            },
+            safira: {
+                valor: 4,
+                contador: 0
+            },
+            rubi: {
+                valor: 6,
+                contador: 0
+            },
+            ambar: {
+                valor: 8,
+                contador: 0
+            },
             total: 0
         }
     }
@@ -48,8 +69,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Quartzo</Text>
-                    <Text> {this.state.quartzo}</Text>
+                    <View>
+                        <Text>Quartzo</Text>
+                        <Text> {this.state.quartzo}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(quartzo) => this.setState({quartzo: this.state.quartzo + 1})}
@@ -66,8 +89,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Quartzo Rosa</Text>
-                    <Text> {this.state.quartzoRosa}</Text>
+                    <View>
+                        <Text>Quartzo Rosa</Text>
+                        <Text> {this.state.quartzoRosa}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(quartzoRosa) => this.setState({quartzoRosa: this.state.quartzoRosa + 1})}
@@ -84,8 +109,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Rubelita</Text>
-                    <Text> {this.state.rubelita}</Text>
+                    <View>
+                        <Text>Rubelita</Text>
+                        <Text> {this.state.rubelita}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(rubelita) => this.setState({rubelita: this.state.rubelita + 1})}
@@ -102,8 +129,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Esmeralda</Text>
-                    <Text> {this.state.esmeralda}</Text>
+                    <View>
+                        <Text>Esmeralda</Text>
+                        <Text> {this.state.esmeralda}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(esmeralda) => this.setState({esmeralda: this.state.esmeralda + 1})}
@@ -120,8 +149,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Safira</Text>
-                    <Text> {this.state.safira}</Text>
+                    <View>
+                        <Text>Safira</Text>
+                        <Text> {this.state.safira}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(safira) => this.setState({safira: this.state.safira + 1})}
@@ -138,8 +169,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Rubi</Text>
-                    <Text> {this.state.rubi}</Text>
+                    <View>
+                        <Text>Rubi</Text>
+                        <Text> {this.state.rubi}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(rubi) => this.setState({rubi: this.state.rubi + 1})}
@@ -156,8 +189,10 @@ class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>Âmbar</Text>
-                    <Text> {this.state.ambar}</Text>
+                    <View>
+                        <Text>Âmbar</Text>
+                        <Text> {this.state.ambar}</Text>
+                    </View>
                     <TouchableOpacity
                         title="+"
                         onPress={(ambar) => this.setState({ambar: this.state.ambar + 1})}

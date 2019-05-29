@@ -45,7 +45,7 @@ export default class Calculator extends React.Component {
     }
 
     handleClickSoma = (pedra) => {
-        this.setState({ [pedra]: this.state.pedra + 1});
+        this.setState({ [pedra.contador]: this.state.pedra.contador + 1});
     }
 
     handleClickSub = (pedra) => {
@@ -64,18 +64,18 @@ export default class Calculator extends React.Component {
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(quartzo) => (this.state.quartzo.contador > 0) ? this.setState({quartzo: this.state.quartzo.contador - 1}):null}
+                        onPress={() => (this.state.quartzo.contador > 0) ? this.setState({quartzo: {...this.state.quartzo, contador: this.state.quartzo.contador - 1}}): null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
                     <View>
                         <Text>Quartzo</Text>
-                        <Text> {this.state.quartzo.contador}</Text>
+                        <Text>{this.state.quartzo.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(quartzo) => this.setState({quartzo: {...this.state.quartzo, contador: contador + 1}})}
+                        onPress={() => this.setState({ quartzo:  {...this.state.quartzo, contador: this.state.quartzo.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>
@@ -84,18 +84,18 @@ export default class Calculator extends React.Component {
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(quartzoRosa) => (this.state.quartzoRosa.contador > 0) ? this.setState({quartzoRosa: this.state.quartzoRosa.contador - 1}):null}
+                        onPress={() => (this.state.quartzoRosa.contador > 0) ? this.setState({quartzoRosa: {...this.state.quartzoRosa, contador: this.state.quartzoRosa.contador - 1}}):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
                     <View>
                         <Text>Quartzo Rosa</Text>
-                        <Text> {this.state.quartzoRosa.contador}</Text>
+                        <Text>{this.state.quartzoRosa.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(quartzoRosa) => this.setState({quartzoRosa: this.state.quartzoRosa.contador + 1})}
+                        onPress={() => this.setState({quartzoRosa: {...this.state.quartzoRosa, contador: this.state.quartzoRosa.contador + 1 }})}
                         style={styles.button}
                     >
                         <Text>+</Text>
@@ -104,18 +104,18 @@ export default class Calculator extends React.Component {
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(rubelita) => (this.state.rubelita.contador > 0) ? this.setState({rubelita: this.state.rubelita.contador - 1}):null}
+                        onPress={() => (this.state.rubelita.contador > 0) ? this.setState({rubelita: {...this.state.rubelita, contador: this.state.rubelita.contador - 1}}):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
                     <View>
                         <Text>Rubelita</Text>
-                        <Text> {this.state.rubelita.contador}</Text>
+                        <Text>{this.state.rubelita.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(rubelita) => this.setState({rubelita: this.state.rubelita.contador + 1})}
+                        onPress={() => this.setState({rubelita: {...this.state.rubelita, contador: this.state.rubelita.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>
@@ -124,18 +124,18 @@ export default class Calculator extends React.Component {
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(esmeralda) => (this.state.esmeralda.contador > 0) ? this.setState({esmeralda: this.state.esmeralda.contador - 1}):null}
+                        onPress={() => (this.state.esmeralda.contador > 0) ? this.setState({esmeralda: {...this.state.esmeralda, contador: this.state.esmeralda.contador - 1}}):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
                     <View>
                         <Text>Esmeralda</Text>
-                        <Text> {this.state.esmeralda.contador}</Text>
+                        <Text>{this.state.esmeralda.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(esmeralda) => this.setState({esmeralda: this.state.esmeralda.contador + 1})}
+                        onPress={() => this.setState({esmeralda: {...this.state.esmeralda, contador: this.state.esmeralda.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>
@@ -144,7 +144,7 @@ export default class Calculator extends React.Component {
                 <View style={styles.pedraContainer}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(safira) => (this.state.safira.contador > 0) ? this.setState({safira: this.state.safira.contador - 1}):null}
+                        onPress={() => (this.state.safira.contador > 0) ? this.setState({safira: {...this.state.safira, contador: this.state.safira.contador - 1}}):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
@@ -155,7 +155,7 @@ export default class Calculator extends React.Component {
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(safira) => this.setState({safira: this.state.safira.contador + 1})}
+                        onPress={() => this.setState({safira: {...this.state.safira, contador: this.state.safira.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>

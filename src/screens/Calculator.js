@@ -16,11 +16,11 @@ export default class Calculator extends React.Component {
                 valor: 1,
                 contador: 0
             },
-            quartzoRosa:{
+            quartzoRosa: {
                 valor: 0,
                 contador: 0
             },
-            rubelita:{
+            rubelita: {
                 valor: 2,
                 contador: 0
             },
@@ -42,6 +42,22 @@ export default class Calculator extends React.Component {
             },
             total: 0
         }
+    }
+
+    componentWillUpdate() {
+        this.createGemsMap();
+    }
+
+    createGemsMap() {
+        let gemMap = new Map();
+        gemMap.set("quartzo", this.state.quartzo);
+        gemMap.set("quartzoRosa", this.state.quartzoRosa);
+        gemMap.set("rubelita", this.state.rubelita);
+        gemMap.set("esmeralda", this.state.esmeralda);
+        gemMap.set("safira", this.state.safira);
+        gemMap.set("rubi", this.state.rubi);
+        gemMap.set("ambar", this.state.ambar);
+        return gemMap;
     }
 
     render() {

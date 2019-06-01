@@ -44,16 +44,6 @@ export default class Calculator extends React.Component {
         }
     }
 
-    handleClickSoma = (pedra) => {
-        this.setState({ [pedra.contador]: this.state.pedra.contador + 1});
-    }
-
-    handleClickSub = (pedra) => {
-        if(this.state.pedra > 0) {
-            this.setState({ [pedra]: this.state.pedra - 1});
-        }
-    }
-
     render() {
         return (
             <View style={styles.container}>
@@ -61,7 +51,7 @@ export default class Calculator extends React.Component {
                     <Text>Total: </Text>
                     <Text>{this.state.total}</Text>
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.quartzo]}>
                     <TouchableOpacity
                         title="-"
                         onPress={() => (this.state.quartzo.contador > 0) ? this.setState({quartzo: {...this.state.quartzo, contador: this.state.quartzo.contador - 1}}): null}
@@ -69,7 +59,7 @@ export default class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
+                    <View style={styles.quantidadePedraContainer}>
                         <Text>Quartzo</Text>
                         <Text>{this.state.quartzo.contador}</Text>
                     </View>
@@ -81,7 +71,7 @@ export default class Calculator extends React.Component {
                         <Text>+</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.quartzoRosa]}>
                     <TouchableOpacity
                         title="-"
                         onPress={() => (this.state.quartzoRosa.contador > 0) ? this.setState({quartzoRosa: {...this.state.quartzoRosa, contador: this.state.quartzoRosa.contador - 1}}):null}
@@ -89,7 +79,7 @@ export default class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
+                    <View style={styles.quantidadePedraContainer}>
                         <Text>Quartzo Rosa</Text>
                         <Text>{this.state.quartzoRosa.contador}</Text>
                     </View>
@@ -101,7 +91,7 @@ export default class Calculator extends React.Component {
                         <Text>+</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.rubelita]}>
                     <TouchableOpacity
                         title="-"
                         onPress={() => (this.state.rubelita.contador > 0) ? this.setState({rubelita: {...this.state.rubelita, contador: this.state.rubelita.contador - 1}}):null}
@@ -109,9 +99,9 @@ export default class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Text>Rubelita</Text>
-                        <Text>{this.state.rubelita.contador}</Text>
+                    <View style={styles.quantidadePedraContainer}>
+                        <Text style={styles.corBranca}>Rubelita</Text>
+                        <Text style={styles.corBranca}>{this.state.rubelita.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
@@ -121,7 +111,7 @@ export default class Calculator extends React.Component {
                         <Text>+</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.esmeralda]}>
                     <TouchableOpacity
                         title="-"
                         onPress={() => (this.state.esmeralda.contador > 0) ? this.setState({esmeralda: {...this.state.esmeralda, contador: this.state.esmeralda.contador - 1}}):null}
@@ -129,9 +119,9 @@ export default class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Text>Esmeralda</Text>
-                        <Text>{this.state.esmeralda.contador}</Text>
+                    <View style={styles.quantidadePedraContainer}>
+                        <Text style={styles.corBranca}>Esmeralda</Text>
+                        <Text style={styles.corBranca}>{this.state.esmeralda.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
@@ -141,7 +131,7 @@ export default class Calculator extends React.Component {
                         <Text>+</Text>
                     </TouchableOpacity>    
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.safira]}>
                     <TouchableOpacity
                         title="-"
                         onPress={() => (this.state.safira.contador > 0) ? this.setState({safira: {...this.state.safira, contador: this.state.safira.contador - 1}}):null}
@@ -149,9 +139,9 @@ export default class Calculator extends React.Component {
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Text>Safira</Text>
-                        <Text> {this.state.safira.contador}</Text>
+                    <View style={styles.quantidadePedraContainer}>
+                        <Text style={styles.corBranca}>Safira</Text>
+                        <Text style={styles.corBranca}>{this.state.safira.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
@@ -161,41 +151,41 @@ export default class Calculator extends React.Component {
                         <Text>+</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.pedraContainer}>
+                <View style={[styles.pedraContainer, styles.rubi]}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(rubi) => (this.state.rubi.contador > 0) ? this.setState({rubi: this.state.rubi.contador - 1}):null}
+                        onPress={() => (this.state.rubi.contador > 0) ? this.setState({rubi: {...this.state.rubi, contador: this.state.rubi.contador - 1}}  ):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Text>Rubi</Text>
-                        <Text> {this.state.rubi.contador}</Text>
+                    <View style={styles.quantidadePedraContainer}>
+                        <Text style={styles.corBranca}>Rubi</Text>
+                        <Text style={styles.corBranca}>{this.state.rubi.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(rubi) => this.setState({rubi: this.state.rubi.contador + 1})}
+                        onPress={() => this.setState({rubi:{...this.state.rubi, contador: this.state.rubi.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={[styles.pedraContainer, styles.quartzo]}>
+                <View style={[styles.pedraContainer, styles.ambar]}>
                     <TouchableOpacity
                         title="-"
-                        onPress={(ambar) => (this.state.ambar.contador > 0) ? this.setState({ambar: this.state.ambar.contador - 1}):null}
+                        onPress={() => (this.state.ambar.contador > 0) ? this.setState({ambar:{...this.state.ambar, contador: this.state.ambar.contador - 1}}):null}
                         style={styles.button}
                     >
                         <Text>-</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Text>Âmbar</Text>
-                        <Text> {this.state.ambar.contador}</Text>
+                    <View style={styles.quantidadePedraContainer}>
+                        <Text style={styles.corBranca}>Âmbar</Text>
+                        <Text style={styles.corBranca}> {this.state.ambar.contador}</Text>
                     </View>
                     <TouchableOpacity
                         title="+"
-                        onPress={(ambar) => this.setState({ambar: this.state.ambar.contador + 1})}
+                        onPress={() => this.setState({ambar: {...this.state.ambar, contador: this.state.ambar.contador + 1}})}
                         style={styles.button}
                     >
                         <Text>+</Text>
@@ -227,17 +217,44 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'stretch'
     },
+    quantidadePedraContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: 100,
+        color: 'white'
+    },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#DDDDDD',
-        width: 35,
-        height: 35
+        width: 40,
+        height: 40,
+        fontSize: 100
     },
     quartzo: {
-        backgroundColor: '#ff0090'
+        backgroundColor: '#F1F0EA'
+    },
+    quartzoRosa: {
+        backgroundColor: '#F9D5E1'
+    },
+    rubelita: {
+        backgroundColor: '#FF5E93'
+    },
+    esmeralda: {
+        backgroundColor: '#419D78'
+    },
+    safira: {
+        backgroundColor: '#54577C'
+    },
+    rubi: {
+        backgroundColor: '#8C1C13'
+    },
+    ambar: {
+        backgroundColor: '#E0A458'
+    },
+    corBranca: {
+        color: 'white'
     }
-
 });
 
 
